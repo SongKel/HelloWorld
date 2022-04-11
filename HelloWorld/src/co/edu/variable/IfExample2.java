@@ -5,7 +5,7 @@ public class IfExample2 {
 	   int num1, num2;
 	   
 	   num1 = 123;
-	   num2 = 456;
+	   num2 = 342;
 	   
 	   if(num1 > num2) {
 		   System.out.println("큰수는: " + num1);
