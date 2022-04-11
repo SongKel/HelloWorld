@@ -19,8 +19,6 @@ public class Test2 {
 		if (maxValue < num3) {
 			maxValue = num3;
 		}
-			
-			
 		
 		System.out.printf("합은 %5d이고 평균은 %.2f이고, 최고점은 90점입니다.", sum, avg, maxValue);
     }
