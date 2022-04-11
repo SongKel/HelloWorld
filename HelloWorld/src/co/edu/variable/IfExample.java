@@ -1,6 +1,6 @@
 package co.edu.variable;
 
-public class Example {
+public class IfExample {
     public static void main(String[] args) {
 		int myAge = 19;
 	    boolean over20; // 변수의 길이 의미있는 변수명.
