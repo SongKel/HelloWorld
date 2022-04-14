@@ -8,7 +8,7 @@ public class BoardEx {
 		Scanner scn = new Scanner(System.in);
 		// BoardList에 정의해놓은 필드와 메소드를 활용해서 기능.
 		BoardList boardList = new BoardList();
-		boardList.init(3);
+		boardList.init(10);
 
 		while (true) {
 
@@ -73,15 +73,22 @@ public class BoardEx {
 					System.out.println("조회결과 없습니다.");
 				} else {
 					getBoard.getDetailInfo();
-				}
 
+				}
+			} else if (menu == 6) {
+				System.out.println("조회할 작성자>> ");
+				String bWriter = scn.next();
+
+				Board getBoard = boardList.searchBoard(bWriter);
+				if (getBoard == null) {
+					System.out.println("조회결과 없습니다.");
+				}
 			} else if (menu == 9) {
 				System.out.println("프로그램을 종료합니다.");
 				break;
 			} else {
 				System.out.println("정확한 메뉴를 선택하세요.");
 			}
-
 		}
 	}
 }

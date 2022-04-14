@@ -2,6 +2,7 @@ package co.edu;
 
 public class BoardList {
 	private Board[] boards;
+	private String writer;
 
 	// 배열크기 초기화
 	public void init(int size) {
@@ -66,4 +67,16 @@ public class BoardList {
 		return boards;
 	}
 
+	// 작성자조회	
+	public Board searchBoard(String bWriter) {
+		for (int i = 0; i < boards.length; i++) {
+			if (boards[i].getWriter().equals(bWriter)) {
+				return boards[i];
+			}
+		}
+		// TODO Auto-generated method stub
+		return null;
+		
+
+	}
 }
