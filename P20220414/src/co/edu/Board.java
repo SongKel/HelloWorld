@@ -9,7 +9,7 @@ public class Board {
 	private int searchCnt = 0;
 
 	// 생성자
-	public Board(int boardrNo, String title, String content, String writer) {
+	public Board(int boardNo, String title, String content, String writer) {
 		this.boardNo = boardNo;
 		this.title = title;
 		this.content = content;
