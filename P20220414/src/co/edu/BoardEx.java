@@ -1,5 +1,6 @@
 package co.edu;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BoardEx {
@@ -8,14 +9,20 @@ public class BoardEx {
 		Scanner scn = new Scanner(System.in);
 		// BoardList에 정의해놓은 필드와 메소드를 활용해서 기능.
 		BoardList boardList = new BoardList();
-		boardList.init(10);
+		boardList.init(5);
 
 		while (true) {
 
 			System.out.println("1.추가 2.수정 3.목록 4.삭제 5.한건조회 6.작성자조회 9.종료");
 			System.out.println("선택>> ");
-			int menu = scn.nextInt();
+			int menu = -1;
+			try {
+			    menu = scn.nextInt(); //숫자로 반환
+            } catch(InputMismatchException e) {
+            	System.out.println("잘못된 처리를 시도했습니다.");
+            }
 			scn.nextLine();
+			
 			if (menu == 1) {
 				System.out.println("글번호 입력>> ");
 				int bNo = scn.nextInt();
@@ -52,12 +59,13 @@ public class BoardEx {
 			} else if (menu == 3) {
 				Board[] boards = boardList.boardList();
 				System.out.println("게시글번호       제목              내용                   사용자  조회수");
-				System.out.println("==========================================================");
+				System.out.println("====================================================================");
 				for (Board board : boards) {
 					if (board != null) {
 						board.getInfo();
 					}
 				}
+				
 			} else if (menu == 4) {
 				System.out.println("삭제할 글번호>>> ");
 				int bNo = Integer.parseInt(scn.nextLine());
@@ -77,12 +85,25 @@ public class BoardEx {
 				}
 			} else if (menu == 6) {
 				System.out.println("조회할 작성자>> ");
-				String bWriter = scn.next();
-
-				Board getBoard = boardList.searchBoard(bWriter);
-				if (getBoard == null) {
-					System.out.println("조회결과 없습니다.");
+				String sWriter = scn.next();
+                Board[] writerList = boardList.getWriterList(sWriter);
+                // writerList 내용 출력
+                System.out.println("게시글번호       제목              내용                   사용자  조회수");
+				System.out.println("====================================================================");
+				for (Board board : writerList) {
+					if (board != null) {
+						board.getInfo();
+					}
 				}
+				
+				
+//				Board getBoard = boardList.searchBoard(bWriter);
+//				if (getBoard == null) {
+//					System.out.println("조회결과 없습니다.");
+//				} else {
+//					getBoard.getDetailInfo();
+					
+//				}
 			} else if (menu == 9) {
 				System.out.println("프로그램을 종료합니다.");
 				break;

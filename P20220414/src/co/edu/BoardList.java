@@ -67,16 +67,29 @@ public class BoardList {
 		return boards;
 	}
 
-	// 작성자조회	
-	public Board searchBoard(String bWriter) {
+	// 작성자조회
+	public Board[] getWriterList(String writer) { // 찾을 대상 배열
+		Board[] sBoards = new Board[5];
+		
 		for (int i = 0; i < boards.length; i++) {
-			if (boards[i].getWriter().equals(bWriter)) {
-				return boards[i];
+			if(boards[i] != null && boards[i].getWriter().equals(writer)) {
+				for(int j = 0; j < sBoards.length; j++) { // 이름 조회 반환 배열
+					if(sBoards[j] == null) {
+						sBoards[j] = boards[i];
+						break;
+					}
+				}
 			}
 		}
-		// TODO Auto-generated method stub
-		return null;
 		
-
+		return sBoards;
 	}
+//	public Board searchBoard(String bWriter) {
+//		for (int i = 0; i < boards.length; i++) {
+//			if (boards[i] != null && boards[i].getWriter().equals(bWriter)) {
+//				return boards[i];
+//			}
+//		}
+//		return null;
+
 }

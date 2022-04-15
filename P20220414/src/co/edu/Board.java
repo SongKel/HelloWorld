@@ -73,4 +73,15 @@ public class Board {
 				"===================================================\n";
 		System.out.printf(info, this.boardNo, this.writer, this.title, this.searchCnt, this.content);
 	}
+
+	@Override // 부모클래스 toString -> 자식클래스 재정의.
+	public String toString() {
+		return "Board [boardNo=" + boardNo + ", title=" + title + ", content=" + content + ", writer=" + writer
+				+ ", searchCnt=" + searchCnt + "]";
+	}
+	
+	
+	
+	
+	
 }
