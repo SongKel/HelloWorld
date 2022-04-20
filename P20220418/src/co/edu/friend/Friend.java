@@ -7,16 +7,24 @@ public class Friend {
 	// 필드
 	private String name;
 	private String phone;
+	private Gender gender; // MEN, WOMEN
 
 	// 생성자
 	protected Friend() {
-		
+
 	}
-	
+
 	public Friend(String name, String phone) {
 		super();
 		this.name = name;
 		this.phone = phone;
+	}
+
+	public Friend(String name, String phone, Gender gender) {
+		super();
+		this.name = name;
+		this.phone = phone;
+		this.gender = gender;
 	}
 
 	// 메소드
@@ -28,12 +36,20 @@ public class Friend {
 		this.name = name;
 	}
 
-	String getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
 	}
 
 	@Override
