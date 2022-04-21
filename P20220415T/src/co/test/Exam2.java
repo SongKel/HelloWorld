@@ -7,18 +7,22 @@ package co.test;
 // 6의 경우에는 2와 3의 배수이므로 2의 배수와 3의 배수의 합계에 각각 더해지도록 하세요.
 public class Exam2 {
 	public static void main(String[] args) {
-		int sum2 = 0;	
-		int sum3 = 0;
-		int i = (int) (Math.random() * 10) + 1;
-		for (i = 0; i <= 10; i++) {
-			if (i % 2 == 0) {
-				sum2 = sum2 + i;
-			} if (i % 3 == 0) {
-				sum3 = sum3 +i ;
-			}
-			 
+		int[] numbers = new int[10];
+		
+		for (int i = 0; i < numbers.length; i++) {
+			numbers[i] = (int) (Math.random() * 10) + 1;						 
 		}
-		System.out.println("sum2 => " + sum2); // 2의배수합
-		System.out.println("sum3 => " + sum3); // 3의배수합
+		
+		int num2, num3;
+		num2 = num3 = 0;
+		for (int i = 0; i < numbers.length; i++) {
+			if(numbers[i] % 2 == 0) {
+				num2 = num2 + numbers[i];
+			}
+			if(numbers[i] % 3 == 0) { //else if는 6을 따로 더해야함.
+				num3 = num3 + numbers[i];
+			}
+		}	
+		System.out.println("2의 배수의 합: " + num2 + ", 3의 배수의 합: " + num3);
 	}
 }

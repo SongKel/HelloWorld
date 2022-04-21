@@ -11,10 +11,13 @@ public class Exam1 {
 		Scanner scn = new Scanner(System.in);
 		// 코드 작성.
 		int num1, num2, num3;
-		int max;
+		System.out.println("값을 입력하세요.");
 		num1 = scn.nextInt();
+		System.out.println("값을 입력하세요.");
 		num2 = scn.nextInt();
+		System.out.println("값을 입력하세요.");
 		num3 = scn.nextInt();
+		int max;
 		
 		if(num1 >= num2 && num1 >= num3) {
 			max = num1;
@@ -23,7 +26,7 @@ public class Exam1 {
 		}else {
 			max = num3;
 		}
-		System.out.println("결과 => 3 수 중에서 가장 큰 값은 " + max + "입니다.");
+		System.out.println("결과 => 3수 중에서 가장 큰 값은 " + max + "입니다.");
 		
 	}
 }
