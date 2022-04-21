@@ -50,6 +50,7 @@ public class BoardApp implements BoardService {
 			if (list.get(i).getWriter().equals(writer)) {
 				list.get(i);
 				System.out.println(list.get(i));
+				break;
 			}
 		}
 
